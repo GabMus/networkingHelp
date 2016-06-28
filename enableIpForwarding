@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ "$(whoami)" != "root" ]; then
+	echo "This script must be run as root"
+	echo "Try with 'sudo ./enableIpForwarding'"
+else
+	echo 1 > /proc/sys/net/ipv4/ip_forward
+	echo "Done!"
+fi
