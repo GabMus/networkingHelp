@@ -1,0 +1,5 @@
+0. Install NetCat (package name is nc usually)
+1. Create a file with whatever you want, let's call it hello.txt
+2. Run:
+	cat hello.txt | nc termbin.com 9999
+3. It will output a link, containing your new pastebin!
