@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "This script will install all the basics for you pal. Please provide your root password"
+sleep 2
+sudo yum install gcc gcc-c++ tmux iptraf tcpdump git
