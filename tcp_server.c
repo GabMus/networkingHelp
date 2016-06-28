@@ -37,11 +37,9 @@ int main(int argc, char**argv)
             n = recv(connfd,mesg,1000,0);
             send(connfd,mesg,n,0);
             mesg[n] = 0;
-            printf("\nPid = %d: received from port %d the 
-following:\n",getpid(),ntohs(cliaddr.sin_port));
+            printf("\nPid = %d: received from port %d the following:\n",getpid(),ntohs(cliaddr.sin_port));
             printf("%s",mesg);
-            
-printf("-------------------------------------------------------\n");
+            printf("-------------------------------------------------------\n");
          }
          
       }

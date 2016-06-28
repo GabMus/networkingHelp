@@ -34,7 +34,6 @@ main()
   for(i=0;i<10;++i)
   { sprintf(line,"\n %d",i+n);
     printf("%s",line);
-    sendto(sockfd, line, strlen(line)+1, 0, (struct sockaddr *)&recv_addr, 
-sizeof(recv_addr));
+    sendto(sockfd, line, strlen(line)+1, 0, (struct sockaddr *)&recv_addr, sizeof(recv_addr));
   }
 }
