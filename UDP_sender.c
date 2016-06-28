@@ -9,7 +9,7 @@
 #include <arpa/inet.h>
 
 #define RECV_PORT 7550
-#define RECV_IP "172.16.38.139"
+#define RECV_IP "127.0.0.1"
 
 main()
 { int sockfd;

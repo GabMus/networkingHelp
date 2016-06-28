@@ -30,6 +30,7 @@ int main(int argc, char**argv)
 
    while (fgets(sendline,999,stdin) != NULL)
    {
+   	  strcat(sendline, " - MESSAGE FROM M4573RC0MPU73R");
       send(sockfd,sendline,strlen(sendline),0);
       n=recv(sockfd,recvline,999,0);
       recvline[n]=0;

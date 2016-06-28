@@ -1,0 +1,40 @@
+#!/bin/bash
+
+echo -e "\nWelcome to the dumb version of scp!\nWhat do you want to do today?\n\n1- send file\n2- get file\n\nEnter the number of your selection"
+printf ">>> "
+read operation
+
+if [ "$operation" != "1" ] && [ "$operation" != "2" ]; then
+	echo "Please retry, but select a proper operation next time"
+elif [ "$operation" == "1" ]; then
+	echo "What file do you want to send? Plase select a proper path"
+	printf ">>> "
+	read toSend
+	if [ -f $toSend ]; then
+		echo "Where do you want to send it? Select a proper path in the remote machine"
+		printf ">>> "
+		read remPos
+		echo "What's the username of the user in the remote machine?"
+		printf ">>> "
+		read remUser
+		echo "What's the IP of the Remote machine?"
+		printf ">>> "
+		read remIp
+		scp $toSend $remUser@$remIp:$remPos
+	fi
+elif [ "$operation" == "2" ]; then
+	echo "What file do you want to get? Plase select a proper remote path"
+	printf ">>> "
+	read toGet
+	echo "Where do you want to save it? Select a proper path in the local machine"
+	printf ">>> "
+	read locPos
+	echo "What's the username of the user in the remote machine?"
+	printf ">>> "
+	read remUser
+	echo "What's the IP of the Remote machine?"
+	printf ">>> "
+	read remIp
+	scp $remUser@$remIp:$toGet $locPos
+else echo "Error! WTF?!?";
+fi
